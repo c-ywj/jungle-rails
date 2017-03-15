@@ -51,6 +51,17 @@ main section.categories-show {
         font-size: 0.8em;
       }
 
+      .badge.soldout {
+        position: relative;
+        border-radius: 5px 0 10px 0;
+        padding-top: 11px;
+        color: white;
+        background: #cc818a;
+        height: 33px;
+        top: -16px;
+        left: -15px;
+      }
+
       &:hover {
 
         border-color: #999;
