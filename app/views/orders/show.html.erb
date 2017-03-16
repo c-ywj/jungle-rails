@@ -4,6 +4,17 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
+  <table class="table table-bordered">
+    <th>Your ordered items (ordered by: <%= @order.email %>) </th>
+    <tbody>
+      <%= render @order %>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered">
+  <tr> Total: $<%= number_with_precision(@order.total_cents / 100, :precision => 2) %> </tr>
+  </table>
+
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
