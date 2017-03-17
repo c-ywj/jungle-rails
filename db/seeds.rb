@@ -132,5 +132,54 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+Review.create!({
+  user_id: 1,
+  product_id: 2,
+  description: 'just zebra pants ...',
+  rating: 9
+})
+
+Review.create!({
+  user_id: 1,
+  product_id: 3,
+  description: 'not hisper enough..',
+  rating: 9
+})
+
+Review.create!({
+  user_id: 2,
+  product_id: 3,
+  description: 'SO HIPSER , AWESUMMMMM',
+  rating: 9
+})
+
+Review.create!({
+  user_id: 1,
+  product_id: 5,
+  description: 'quite stealthy i guess',
+  rating: 9
+})
+
+Review.create!({
+  user_id: 2,
+  product_id: 5,
+  description: 'bleh... it\'s alright',
+  rating: 9
+})
+
+Review.create!({
+  user_id: 1,
+  product_id: 7,
+  description: 'def not skateboard, but wheels',
+  rating: 9
+})
+
+Review.create!({
+  user_id: 2,
+  product_id: 11,
+  description: 'this chair wakes me up in the morning.',
+  rating: 9
+})
+
 
 puts "DONE!"
