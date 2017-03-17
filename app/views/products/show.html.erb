@@ -26,10 +26,20 @@
     </div>
 
     <div>
+      <%= form_for [@product, @review] do |f| %>
+        Description: <%= f.text_field :description %> <br>
+        Rating: <%= f.select(:rating, [[1],[2],[3],[4],[5]]) %> <br>
+      <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+
+    <div>
     <% @product.reviews.each do |rev| %>
-      <p>Reviewed by: <%= rev.user.first_name %></p>
-      <p>Review description: <%= rev.description %> </p>
-      <p>Rating: <%= rev.rating %></p> <br>
+      <% if rev.user %>
+        <p>Reviewed by: <%= rev.user.first_name %></p>
+        <p>Review description: <%= rev.description %> </p>
+        <p>Rating: <%= rev.rating %></p> <br>
+      <% end %>
     <% end %>
     </div>
 
