@@ -35,7 +35,9 @@
       </tfoot>
     </table>
   </div>
+<% end %>
 
+<% if current_user %>
   <div class="row">
     <div class="col-xs-12">
       <%= form_tag orders_path do %>
@@ -52,5 +54,7 @@
       <% end %>
     </div>
   </div>
+ <% else %>
+  <a href="/login">login to buy!</a>
 <% end %>
 </section>
