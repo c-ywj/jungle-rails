@@ -43,7 +43,9 @@
             <% if rev.user_id == current_user.id %>
               <%= link_to fa_icon('trash'), [@product, rev], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "You are about to delete your review for this product, do you wish to continue?" } %>
             <% end %>
+            <!-- shows delete button to reviews written by current_user-->
           <% end %>
+          <!-- runs above if current_user exists; visitors do not see delete button-->
         <% end %>
       <% end %>
     </div>
