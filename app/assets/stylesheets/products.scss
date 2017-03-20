@@ -84,4 +84,35 @@ main section.products-show {
   }
 }
 
+.dlt-review {
+  position: relative;
+  top: -27px;
+}
 
+.review-description-input {
+  width: 30%;
+  height: 57px;
+  padding-bottom: 39px;
+}
+
+.review-form-submit-btn {
+  float: right;
+}
+
+.sign-up-form input {
+  padding-top: 3px;
+  margin-top: 3px;
+}
+
+.sign-up-form input#user_first_name,
+                   #user_last_name {
+  margin-left: 82px;
+}
+
+.sign-up-form input#user_password {
+  margin-left: 84px;
+}
+
+.sign-up-form input#user_email {
+  margin-left: 112px;
+}

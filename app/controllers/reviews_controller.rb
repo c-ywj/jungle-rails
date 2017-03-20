@@ -1,10 +1,14 @@
 class ReviewsController < ApplicationController
   def create
-    @review = Review.new(review_params)
-    @review.user_id = current_user.id
-    @review.product_id = product_id_for_review
-    @review.save
-    redirect_to '/'
+    if(current_user)
+      @review = Review.new(review_params)
+      @review.user_id = current_user.id
+      @review.product_id = product_id_for_review
+      @review.save
+      redirect_to '/'
+    else
+      redirect_to controller: 'sessions', action: 'new'
+    end
   end
 
   def destroy

@@ -26,14 +26,16 @@
     </div>
 
     <div class="row well">
-      <%= form_for [@product, @review] do |f| %>
-        Description: <%= f.text_field :description %> <br>
-        Rating: <%= f.select(:rating, [[1],[2],[3],[4],[5]]) %> <br>
-      <%= f.submit "Submit" %>
-      <% end %>
+      <div class="review-form">
+        <%= form_for [@product, @review] do |f| %>
+          Description: <%= f.text_field :description, :class => 'review-description-input' %> <br>
+          Rating: <%= f.select(:rating, [[1],[2],[3],[4],[5]]) %> <br>
+        <%= f.submit "Submit", :class => 'review-form-submit-btn' %>
+        <% end %>
+      </div>
     </div>
 
-    <div>
+    <div class=".container">
       <% @product.reviews.reverse.each do |rev| %>
         <% if rev.user %>
           <p>Reviewed by: <%= rev.user.first_name %></p>
@@ -41,12 +43,15 @@
           <p>Rating: <%= rev.rating %></p> <br>
           <% if current_user %>
             <% if rev.user_id == current_user.id %>
+              <span class="dlt-review">
               <%= link_to fa_icon('trash'), [@product, rev], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "You are about to delete your review for this product, do you wish to continue?" } %>
+              </span>
             <% end %>
             <!-- shows delete button to reviews written by current_user-->
           <% end %>
           <!-- runs above if current_user exists; visitors do not see delete button-->
         <% end %>
+        <!-- check by-pass for the @review.user_id=>nil bound to the form from line 28 to 34-->
       <% end %>
     </div>
   </article>
