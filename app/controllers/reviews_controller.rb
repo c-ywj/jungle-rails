@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
       @review.user_id = current_user.id
       @review.product_id = product_id_for_review
       @review.save
-      redirect_to '/'
+      redirect_to controller: 'products', id: product_id_for_review, action: 'show'
     else
       redirect_to controller: 'sessions', action: 'new'
     end
